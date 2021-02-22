@@ -1,0 +1,32 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav-container">
+    <div class="bg-light border-right" id="sidebar">
+      <div class="sidebar-heading">
+        <strong>XL axiata</strong>
+      </div>
+      <div class="list-group list-group-flush">
+        <a
+          routerLink="/axiata/allticket"
+          class="list-group-item list-group-item-action bg-light"
+          routerLinkActive="aktif"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >All Ticket</a
+        >
+        <a
+          routerLink="/axiata/myticket"
+          class="list-group-item list-group-item-action bg-light"
+          routerLinkActive="aktif"
+          >My Ticket</a
+        >
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <nav>
+      <button (click)="onSinenavToggle()">
+        <span class="material-icons">menu</span>
+      </button>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
