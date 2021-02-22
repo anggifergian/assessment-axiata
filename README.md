@@ -1,26 +1,23 @@
-# AssessmentAxiata
+# Assessment Axiata
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
-## Development server
+## 🚀 Quick start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run this locally:
 
-## Code scaffolding
+1. Clone project `git clone https://github.com/anggifergian/assessment-axiata.git`
+2. Install all dependencies using `npm install`
+3. Start the development server using `npm start` or `ng serve`
+4. Open up [http://localhost:8080](http://localhost:4200)
+5. Happy Hacking!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```CLI
+git clone https://github.com/anggifergian/assessment-axiata.git
+cd assessment-axiata
+npm install
+npm start
+```
 
 ## Further help
 
