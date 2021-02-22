@@ -9,7 +9,7 @@ To run this locally:
 1. Clone project `git clone https://github.com/anggifergian/assessment-axiata.git`
 2. Install all dependencies using `npm install`
 3. Start the development server using `npm start` or `ng serve`
-4. Open up [http://localhost:8080](http://localhost:4200)
+4. Open up [http://localhost:4200](http://localhost:4200)
 5. Happy Hacking!
 
 ```CLI
