@@ -1,3 +1,9 @@
 .sidenav {
   background-color: var(--bg-color);
 }
+
+::ng-deep {
+  .mat-list-item-content {
+    background-color: transparent;
+  }
+}
