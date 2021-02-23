@@ -1,0 +1,42 @@
+[
+    {
+        "_id": 1,
+        "ticketId": "ABC123",
+        "ticketName": "Bronet Axis",
+        "reporter": "Ikhsan",
+        "createdAt": "2020-09-04",
+        "status": "success",
+        "activity": "Initial Ticket",
+        "productStream": "AXIS"
+    },
+    {
+        "_id": 2,
+        "ticketId": "ABC234",
+        "ticketName": "Sisnet Axis",
+        "reporter": "Sunarto",
+        "createdAt": "2020-09-04",
+        "status": "success",
+        "activity": "Approved by BRM",
+        "productStream": "PREPAID"
+    },
+    {
+        "_id": 3,
+        "ticketId": "ABC345",
+        "ticketName": "Internet Axis",
+        "reporter": "Sunardi",
+        "createdAt": "2020-09-04",
+        "status": "waiting",
+        "activity": "Waiting Approval",
+        "productStream": "POSTPAID"
+    },
+    {
+        "_id": 4,
+        "ticketId": "ABC456",
+        "ticketName": "Gamers Package",
+        "reporter": "Sunjaya",
+        "createdAt": "2020-09-04",
+        "status": "warning",
+        "activity": "Withdrew by BRM",
+        "productStream": "VAS"
+    }
+]
