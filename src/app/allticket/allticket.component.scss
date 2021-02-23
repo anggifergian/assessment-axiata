@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+@media (min-width: 968px) {
+  .container {
+    max-width: 1120px;
+  }
+}
+.navigation {
+  background-color: #fff;
+  color: #343434;
+  margin-top: 18px;
+}
+.table-container {
+  padding-top: 28px;
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.waiting {
+  background-color: yellow;
+}
+.success {
+  background-color: green;
+}
+.warning {
+  background-color: red;
+}
+.center {
+  text-align: center !important;
+}

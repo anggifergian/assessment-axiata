@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-onboarding',
@@ -7,5 +8,11 @@ import { Component } from "@angular/core";
 })
 
 export class OnboardingComponent {
+    constructor(
+        private router: Router,
+    ) {}
 
+    onAzureLogin() {
+        this.router.navigate(['/axiata/allticket']);
+    }
 }
