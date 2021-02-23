@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { onMainContentChange, onSideNavChange, animateText } from "../animations/animations";
 
 @Component({
@@ -11,8 +12,16 @@ export class AxiataComponent {
     public sideNavState: boolean = false;
     public linkText: boolean = false;
 
+    constructor(
+        private router: Router
+    ) {}
+
     onSinenavToggle() {
         this.sideNavState = !this.sideNavState;
         this.linkText = this.sideNavState;
+    }
+
+    logout() {
+        this.router.navigate(['/onboarding']);
     }
 }
