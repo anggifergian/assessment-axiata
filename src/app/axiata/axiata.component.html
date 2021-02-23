@@ -1,27 +1,45 @@
-<mat-sidenav-container autosize>
-  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav-container">
-    <div class="bg-light border-right" id="sidebar">
-      <div class="sidebar-heading">
-        <strong>XL axiata</strong>
-      </div>
-      <div class="list-group list-group-flush">
-        <a
-          routerLink="/axiata/allticket"
-          class="list-group-item list-group-item-action bg-light"
-          routerLinkActive="aktif"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >All Ticket</a
-        >
-        <a
-          routerLink="/axiata/myticket"
-          class="list-group-item list-group-item-action bg-light"
-          routerLinkActive="aktif"
-          >My Ticket</a
-        >
+<mat-sidenav-container autosize style="height: 100%">
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
+    <div
+      class="sidenav-container"
+      [@onSideNavChange]="sideNavState ? 'open' : 'close'"
+    >
+      <div>
+        <div class="side-image"></div>
+
+        <div class="side-menu">
+          <mat-nav-list>
+            <a
+              mat-list-item
+              routerLink="/axiata/allticket"
+              routerLinkActive="aktif"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <mat-icon>local_movies</mat-icon>
+              <span
+                [@animateText]="linkText ? 'show' : 'hide'"
+                style="padding-left: 10px"
+                >All Ticket
+              </span>
+            </a>
+            <a
+              mat-list-item
+              routerLink="/axiata/myticket"
+              routerLinkActive="aktif"
+            >
+              <mat-icon>local_offer</mat-icon>
+              <span
+                [@animateText]="linkText ? 'show' : 'hide'"
+                style="padding-left: 10px"
+                >My Ticket
+              </span>
+            </a>
+          </mat-nav-list>
+        </div>
       </div>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content [@onMainContentChange]="sideNavState ? 'open' : 'close'">
     <nav>
       <button (click)="onSinenavToggle()">
         <span class="material-icons">menu</span>
