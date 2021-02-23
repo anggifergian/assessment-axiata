@@ -8,8 +8,8 @@ const axiataRoutes: Routes = [
         path: '',
         component: AxiataComponent,
         children: [
-            { path: '', redirectTo: 'main', pathMatch: 'full'},
-            { path: 'main', component: AllticketComponent},
+            { path: '', redirectTo: 'allticket', pathMatch: 'full'},
+            { path: 'allticket', component: AllticketComponent},
             { path: '**', redirectTo: '' }
         ]
     },
