@@ -5,7 +5,24 @@
       [@onSideNavChange]="sideNavState ? 'open' : 'close'"
     >
       <div>
-        <div class="side-image"></div>
+        <div class="side-image">
+          <mat-nav-list>
+            <a mat-list-item class="logo-item">
+              <img
+                src="assets/icon-axiata.svg"
+                style="max-height: 30px"
+                alt="Icon Axiata"
+              />
+              <span [@animateText]="linkText ? 'show' : 'hide'">
+                <img
+                  src="assets/label-axiata.svg"
+                  class="label-axiata"
+                  alt="Label Axiata"
+                />
+              </span>
+            </a>
+          </mat-nav-list>
+        </div>
 
         <div class="side-menu">
           <mat-nav-list>
@@ -40,9 +57,23 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="sideNavState ? 'open' : 'close'">
-    <nav>
-      <button (click)="onSinenavToggle()">
+    <nav class="navbar">
+      <button mat-button (click)="onSinenavToggle()">
         <span class="material-icons">menu</span>
+      </button>
+
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <div class="profile-menu">
+          <div class="role">Role: Business Owner</div>
+          <div class="btn role">
+            <button mat-raised-button>Logout</button>
+          </div>
+        </div>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="beforeMenu">
+        <div class="profile-item">
+          Hi, Ikhsan <span class="material-icons">arrow_drop_down</span>
+        </div>
       </button>
     </nav>
     <router-outlet></router-outlet>

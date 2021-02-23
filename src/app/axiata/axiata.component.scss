@@ -1,9 +1,48 @@
-.sidenav {
-  background-color: var(--bg-color);
-}
-
 ::ng-deep {
   .mat-list-item-content {
     background-color: transparent;
   }
+  .mat-sidenav-content {
+    background-color: #eaeaea;
+  }
+  .mat-menu-panel {
+    background-color: #ffffff;
+  }
+  .mat-menu-item {
+    color: #2d2d2d;
+  }
+}
+
+.sidenav {
+  background-color: var(--bg-color);
+}
+.label-axiata {
+  padding-left: 10px;
+  color: #ffffff;
+  height: 20px;
+  object-fit: cover;
+}
+.side-image {
+  margin-bottom: 12px;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  color: #2d2d2d;
+}
+.profile-menu {
+  display: flex;
+  flex-direction: column;
+}
+.role {
+  padding: 12px 16px;
+  text-align: right;
+}
+.profile-item {
+  display: flex;
+  align-items: center;
 }
