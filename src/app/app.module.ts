@@ -15,18 +15,26 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
 import { AllticketComponent } from './allticket/allticket.component';
-import { HttpClientModule } from '@angular/common/http';
+import { UsmTableComponent } from './components/usm-table.component';
+import { UsmComponent } from './allticket/usm.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     OnboardingComponent,
     AxiataComponent,
-    AllticketComponent
+    AllticketComponent,
+    UsmTableComponent,
+    UsmComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatSelectModule,
     FormsModule,
-    TableModule
+    TableModule,
+    MatTableModule,
+    MatSortModule,
+    MatSlideToggleModule,
+    MatTooltipModule
   ],
   providers: [
     TicketService
