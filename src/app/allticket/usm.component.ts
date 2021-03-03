@@ -18,4 +18,8 @@ export class UsmComponent implements OnInit {
         this.table.labels = UsmLabel;
         this.table.columns = UsmColumn;
     }
+
+    handleFilterChanges(event) {
+        console.log(event);
+    }
 }

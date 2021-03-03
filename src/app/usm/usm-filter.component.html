@@ -1,0 +1,50 @@
+<form [formGroup]="filterForm">
+  <div class="filter">
+    <mat-form-field>
+      <mat-select placeholder="Search by" formControlName="searchBy">
+        <mat-option *ngFor="let filter of filterOption" [value]="filter.value">
+          {{ filter.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="search">
+    <mat-form-field>
+      <mat-label>Seach value</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="off"
+        formControlName="searchValue"
+      />
+      <button
+        *ngIf="filterForm.get('searchValue').value"
+        mat-button
+        matSuffix
+        mat-icon-button
+        type="button"
+        aria-label="Clear"
+        (click)="resetSearchValue()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="clear">
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="resetForm()"
+      *ngIf="filterForm.get('searchBy').value"
+      style="margin-right: 4px"
+    >
+      Clear
+    </button>
+    <button mat-flat-button color="primary" type="button" (click)="onSubmit()">
+      Search
+    </button>
+  </div>
+</form>
