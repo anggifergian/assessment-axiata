@@ -26,7 +26,7 @@ import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
 import { AllticketComponent } from './allticket/allticket.component';
 import { UsmTableComponent } from './components/usm-table.component';
-import { UsmComponent } from './allticket/usm.component';
+import { UsmComponent } from './usm/usm.component';
 import { UsmFilterComponent } from './usm/usm-filter.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
