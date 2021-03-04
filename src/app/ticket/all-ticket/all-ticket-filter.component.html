@@ -1,7 +1,11 @@
 <form [formGroup]="filterForm">
   <div class="filter">
     <mat-form-field>
-      <mat-select placeholder="Search by" formControlName="searchBy">
+      <mat-select
+        placeholder="Search by"
+        formControlName="searchBy"
+        (selectionChange)="selectionChange($event)"
+      >
         <mat-option *ngFor="let filter of filterOption" [value]="filter.code">
           {{ filter.value | uppercase }}
         </mat-option>
@@ -12,7 +16,7 @@
   <!-- Search -->
   <div class="search">
     <mat-form-field *ngIf="!isDate && !isStatus">
-      <mat-input>Search Value</mat-input>
+      <mat-label>Search Value</mat-label>
       <input
         matInput
         type="text"
