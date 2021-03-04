@@ -1,0 +1,89 @@
+<form [formGroup]="filterForm">
+  <div class="filter">
+    <mat-form-field>
+      <mat-select placeholder="Search by" formControlName="searchBy">
+        <mat-option *ngFor="let filter of filterOption" [value]="filter.code">
+          {{ filter.value | uppercase }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Search -->
+  <div class="search">
+    <mat-form-field *ngIf="!isDate && !isStatus">
+      <mat-input>Search Value</mat-input>
+      <input
+        matInput
+        type="text"
+        autocomplete="off"
+        formControlName="searchValue"
+      />
+      <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        type="button"
+        aria-label="Clear"
+        (click)="resetSearchValue()"
+        *ngIf="filterForm.get('searchValue').value"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <ng-container *ngIf="isStatus">
+      <mat-form-field>
+        <mat-select placeholder="Search Value" formControlName="searchValue">
+          <mat-option>-- Select Search --</mat-option>
+          <mat-option [value]="1">Hijau</mat-option>
+          <mat-option [value]="2">Kuning</mat-option>
+          <mat-option [value]="3">Merah</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="tool-tip">
+        <span
+          class="bullet-success"
+          *ngIf="filterForm.get('searchValue').value === 1"
+        ></span>
+        <span
+          class="bullet-warning"
+          *ngIf="filterForm.get('searchValue').value === 2"
+        ></span>
+        <span
+          class="bullet-danger"
+          *ngIf="filterForm.get('searchValue').value === 3"
+        ></span>
+      </div>
+    </ng-container>
+
+    <input
+      type="text"
+      *ngIf="isDate"
+      bsDatepicker
+      (bsValueChange)="onChooseDate($event)"
+    />
+  </div>
+
+  <!-- Clear -->
+  <div class="clear">
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="resetForm()"
+      *ngIf="filterForm.get('searchBy').value"
+    >
+      Clear
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="onSubmit()"
+      style="margin-left: 4px"
+    >
+      Search
+    </button>
+  </div>
+</form>

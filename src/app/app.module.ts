@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
@@ -29,6 +30,8 @@ import { UsmTableComponent } from './components/usm-table.component';
 import { UsmComponent } from './usm/usm.component';
 import { UsmFilterComponent } from './usm/usm-filter.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AllTicketComponent } from './ticket/all-ticket/all-ticket.component';
+import { AllTicketFilterComponent } from './ticket/all-ticket/all-ticket-filter.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AllticketComponent,
     UsmTableComponent,
     UsmComponent,
-    UsmFilterComponent
+    UsmFilterComponent,
+    AllTicketComponent,
+    AllTicketFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTooltipModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
     TicketService
