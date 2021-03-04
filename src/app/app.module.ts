@@ -32,6 +32,22 @@ import { UsmFilterComponent } from './usm/usm-filter.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AllTicketComponent } from './ticket/all-ticket/all-ticket.component';
 import { AllTicketFilterComponent } from './ticket/all-ticket/all-ticket-filter.component';
+import { BaseService } from './services/base.service';
+
+const materialModule = [
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatSelectModule,
+  MatTableModule,
+  MatSortModule,
+  MatSlideToggleModule,
+  MatTooltipModule,
+  MatFormFieldModule,
+  MatInputModule
+];
 
 @NgModule({
   declarations: [
@@ -51,25 +67,15 @@ import { AllTicketFilterComponent } from './ticket/all-ticket/all-ticket-filter.
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatSelectModule,
     FormsModule,
     TableModule,
-    MatTableModule,
-    MatSortModule,
-    MatSlideToggleModule,
-    MatTooltipModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    ...materialModule,
   ],
   providers: [
-    TicketService
+    TicketService,
+    BaseService
   ],
   bootstrap: [AppComponent]
 })

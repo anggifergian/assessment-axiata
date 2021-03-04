@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AllticketComponent } from '../allticket/allticket.component';
+import { AllTicketComponent } from "../ticket/all-ticket/all-ticket.component";
 import { AxiataComponent } from './axiata.component';
 
 const axiataRoutes: Routes = [
@@ -9,7 +9,7 @@ const axiataRoutes: Routes = [
     component: AxiataComponent,
     children: [
       { path: '', redirectTo: 'allticket', pathMatch: 'full'},
-      { path: 'allticket', component: AllticketComponent},
+      { path: 'allticket', component: AllTicketComponent},
       { path: '**', redirectTo: 'allticket', pathMatch: 'full' }
     ]
   },
