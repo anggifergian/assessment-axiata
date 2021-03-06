@@ -11,6 +11,12 @@ export class MoshComponent implements OnInit {
     isSelected: false
   }
 
+  tweet = {
+    body: "Here is the body of a tweet...",
+    isLiked: true,
+    likesCount: 3
+  }
+
   constructor() { }
 
   ngOnInit(): void {
