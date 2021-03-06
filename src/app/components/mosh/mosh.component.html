@@ -1,11 +1,15 @@
 <div class="p-2">
-  <app-favorite
+  <!-- <app-favorite
     [isSelected]="post.isSelected"
     (onChange)="onFavoriteChange($event)"
-  ></app-favorite>
-  <br />
-  <bootstrap-panel>
+  ></app-favorite> -->
+
+  <bootstrap-card>
     <ng-container class="title">Anggi Fergian</ng-container>
     <ng-container class="subtitle">Frontend Engineer</ng-container>
-  </bootstrap-panel>
+    <ng-container class="likes">
+      <like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></like>
+    </ng-container>
+  </bootstrap-card>
+  <br />
 </div>
