@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MoshComponent } from '../components/mosh/mosh.component';
 import { AllTicketComponent } from "../ticket/all-ticket/all-ticket.component";
 import { AxiataComponent } from './axiata.component';
 
@@ -9,6 +10,7 @@ const axiataRoutes: Routes = [
     component: AxiataComponent,
     children: [
       { path: '', redirectTo: 'allticket', pathMatch: 'full'},
+      { path: 'mosh', component: MoshComponent },
       { path: 'allticket', component: AllTicketComponent},
       { path: '**', redirectTo: 'allticket', pathMatch: 'full' }
     ]

@@ -1,0 +1,11 @@
+<div class="p-2">
+  <app-favorite
+    [isSelected]="post.isSelected"
+    (onChange)="onFavoriteChange($event)"
+  ></app-favorite>
+  <br />
+  <bootstrap-panel>
+    <ng-container class="title">Anggi Fergian</ng-container>
+    <ng-container class="subtitle">Frontend Engineer</ng-container>
+  </bootstrap-panel>
+</div>

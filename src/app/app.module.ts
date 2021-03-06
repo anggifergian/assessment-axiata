@@ -33,6 +33,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AllTicketComponent } from './ticket/all-ticket/all-ticket.component';
 import { AllTicketFilterComponent } from './ticket/all-ticket/all-ticket-filter.component';
 import { BaseService } from './services/base.service';
+import { TitleCasePipe } from './pipes/title-case.pipe';
+import { FavoriteComponent } from './components/mosh/favorite/favorite.component';
+import { MoshComponent } from './components/mosh/mosh.component';
+import { BootstrapPanelComponent } from './components/mosh/bootstrap-panel/bootstrap-panel.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -59,7 +63,11 @@ const materialModule = [
     UsmComponent,
     UsmFilterComponent,
     AllTicketComponent,
-    AllTicketFilterComponent
+    AllTicketFilterComponent,
+    TitleCasePipe,
+    FavoriteComponent,
+    MoshComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,
