@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ZippyComponent {
   @Input("title") title: string;
-  isExpanded: boolean = true;
+  isExpanded: boolean;
 
   toggle() {
     this.isExpanded = !this.isExpanded;
