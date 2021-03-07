@@ -37,6 +37,9 @@ import { FavoriteComponent } from './components/mosh/favorite/favorite.component
 import { MoshComponent } from './components/mosh/mosh.component';
 import { BootstrapCardComponent } from './components/mosh/bootstrap-card/bootstrap-card.component';
 import { LikeComponent } from './components/mosh/like/like.component';
+import { DirectivesComponent } from './components/mosh/directives/directives.component';
+import { InputFormatDirective } from './components/mosh/input-format.directive';
+import { ZippyComponent } from './components/mosh/zippy/zippy.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -67,7 +70,10 @@ const materialModule = [
     FavoriteComponent,
     MoshComponent,
     BootstrapCardComponent,
-    LikeComponent
+    LikeComponent,
+    DirectivesComponent,
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,

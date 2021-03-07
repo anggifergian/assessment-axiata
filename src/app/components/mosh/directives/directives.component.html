@@ -1,0 +1,30 @@
+<ul class="nav nav-pills mb-2">
+  <li class="nav-item" (click)="viewMode = 'map'">
+    <a class="nav-link" [class.active]="viewMode === 'map'">Map View</a>
+  </li>
+  <li class="nav-item" (click)="viewMode = 'list'">
+    <a class="nav-link" [class.active]="viewMode === 'list'">List View</a>
+  </li>
+</ul>
+
+<div class="container">
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">
+      <button class="btn btn-primary mb-2" (click)="loadCourses()">
+        Load Courses
+      </button>
+      <ul class="list-group">
+        <li
+          *ngFor="let course of courses; trackBy: trackCourse"
+          class="list-group-item"
+        >
+          {{ course.name }}
+        </li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'list'">
+      <zippy title="Shipping Details"> Shipping Details Content </zippy>
+    </div>
+    <div *ngSwitchDefault>Otherwise</div>
+  </div>
+</div>

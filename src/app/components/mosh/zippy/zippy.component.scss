@@ -1,0 +1,28 @@
+.zippy {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.zippy-heading {
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.zippy-heading:hover {
+  background-color: #f0f0f0;
+}
+
+.zippy-body {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.expanded {
+  background-color: #fff;
+}
+
+.material-icons {
+  float: right;
+}
