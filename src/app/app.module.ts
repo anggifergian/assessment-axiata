@@ -22,6 +22,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { MatDialogModule } from "@angular/material/dialog";
 
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
@@ -40,6 +41,9 @@ import { LikeComponent } from './components/mosh/like/like.component';
 import { DirectivesComponent } from './components/mosh/directives/directives.component';
 import { InputFormatDirective } from './components/mosh/input-format.directive';
 import { ZippyComponent } from './components/mosh/zippy/zippy.component';
+import { RequestComponent } from './ticket/all-ticket/dialog/request/request.component';
+import { MyTicketComponent } from './ticket/my-ticket/my-ticket.component';
+import { TableTicketComponent } from './ticket/my-ticket/table-ticket/table-ticket.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -53,7 +57,8 @@ const materialModule = [
   MatSlideToggleModule,
   MatTooltipModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 ];
 
 @NgModule({
@@ -73,7 +78,10 @@ const materialModule = [
     LikeComponent,
     DirectivesComponent,
     InputFormatDirective,
-    ZippyComponent
+    ZippyComponent,
+    RequestComponent,
+    MyTicketComponent,
+    TableTicketComponent
   ],
   imports: [
     BrowserModule,
