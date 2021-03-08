@@ -1,0 +1,30 @@
+[
+    {
+        "category": "sub-product",
+        "code": "LEGACY",
+        "orderNo": 1,
+        "subCategory": "AXIS,PREPAID,POSTPAID",
+        "value": "Legacy"
+    },
+    {
+        "category": "sub-product",
+        "code": "MODCHAN",
+        "orderNo": 3,
+        "subCategory": "AXIS,VAS,PREPAID",
+        "value": "Modern Channel"
+    },
+    {
+        "category": "sub-product",
+        "code": "151",
+        "orderNo": 4,
+        "subCategory": "AXIS,PREPAID,POSTPAID",
+        "value": "151"
+    },
+    {
+        "category": "sub-product",
+        "code": "BANK",
+        "orderNo": 5,
+        "subCategory": "AXIS,POSTPAID",
+        "value": "Bank/Settlement"
+    }
+]

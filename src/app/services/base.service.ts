@@ -9,7 +9,7 @@ export class BaseService {
 
     public getData(url: string, responseModel: any, requestParamModel?: any, isArray?: boolean):Observable<any> {
         const params = requestParamModel ? generateHttpParams(requestParamModel.convert()) : null;
-
+        console.log(params);
         return this.http.get(url, {params});
     }
 }
