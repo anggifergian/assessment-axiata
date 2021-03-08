@@ -44,6 +44,7 @@ import { ZippyComponent } from './components/mosh/zippy/zippy.component';
 import { RequestComponent } from './ticket/all-ticket/dialog/request/request.component';
 import { MyTicketComponent } from './ticket/my-ticket/my-ticket.component';
 import { TableTicketComponent } from './ticket/my-ticket/table-ticket/table-ticket.component';
+import { ContactFormComponent } from './components/mosh/contact-form/contact-form.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -81,7 +82,8 @@ const materialModule = [
     ZippyComponent,
     RequestComponent,
     MyTicketComponent,
-    TableTicketComponent
+    TableTicketComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,9 @@
   <li class="nav-item" (click)="viewMode = 'input'">
     <a class="nav-link" [class.active]="viewMode === 'input'">Input Format</a>
   </li>
+  <li class="nav-item" (click)="viewMode = 'form'">
+    <a class="nav-link" [class.active]="viewMode === 'form'">Template Driven</a>
+  </li>
 </ul>
 
 <div class="container">
@@ -35,6 +38,9 @@
         placeholder="Fullname"
         appInputFormat
       />
+    </div>
+    <div *ngSwitchCase="'form'">
+      <contact-form></contact-form>
     </div>
     <div *ngSwitchDefault>Otherwise</div>
   </div>

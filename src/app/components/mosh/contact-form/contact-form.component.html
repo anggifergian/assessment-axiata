@@ -1,0 +1,89 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        required
+        minlength="5"
+        ngModel
+        name="firstName"
+        #firstName="ngModel"
+        id="firstName"
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': firstName.touched && !firstName.valid }"
+        (change)="onChange(firstName)"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="firstName.touched && !firstName.valid"
+      >
+        <ng-container *ngIf="firstName.errors.minlength">
+          First name should have minimum
+          {{ firstName.errors.minlength.requiredLength }} characters.
+        </ng-container>
+        <ng-container *ngIf="firstName.errors.required">
+          First name is required.
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <input
+      ngModel
+      name="comment"
+      id="comment"
+      type="text"
+      class="form-control"
+      #email="ngModel"
+      (change)="onChange(email)"
+    />
+  </div>
+
+  <div class="form-group">
+    <div *ngFor="let gender of genders">
+      <label>
+        <input ngModel type="radio" name="gender" [value]="gender.id" />
+        {{ gender.label }}
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select
+      ngModel
+      name="contactMethod"
+      id="contactMethod"
+      class="form-control"
+    >
+      <option value=""></option>
+      <option *ngFor="let method of contactMethods" [value]="method.id">
+        {{ method.label }}
+      </option>
+    </select>
+  </div>
+
+  <div class="custom-control custom-checkbox">
+    <input
+      ngModel
+      type="checkbox"
+      name="isSubscribed"
+      id="isSubscribed"
+      class="custom-control-input"
+    />
+    <label class="custom-control-label" for="isSubscribed">
+      Subscribed to mailing list
+    </label>
+  </div>
+  <p class="pt-3">{{ contactForm.value | json }}</p>
+  <button
+    type="submit"
+    class="btn btn-primary mt-3"
+    [disabled]="contactForm.touched && !contactForm.valid"
+  >
+    Submit
+  </button>
+</form>
