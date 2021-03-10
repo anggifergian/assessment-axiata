@@ -91,7 +91,7 @@ export class RequestComponent implements OnInit {
   }
 
   productList() {
-    this.router.navigate(['/ticket/add-ticket']);
+    this.router.navigate(['/axiata/add-ticket']);
 		this.dialogRef.close();
   }
 

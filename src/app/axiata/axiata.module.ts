@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MoshComponent } from '../components/mosh/mosh.component';
+import { AddTicketComponent } from '../ticket/add-ticket/add-ticket.component';
 import { AllTicketComponent } from "../ticket/all-ticket/all-ticket.component";
 import { MyTicketComponent } from '../ticket/my-ticket/my-ticket.component';
 import { AxiataComponent } from './axiata.component';
@@ -14,6 +15,7 @@ const axiataRoutes: Routes = [
       { path: 'mosh', component: MoshComponent },
       { path: 'allticket', component: AllTicketComponent},
       { path: 'my-test', component: MyTicketComponent},
+      { path: 'add-ticket', component: AddTicketComponent},
       { path: '**', redirectTo: 'allticket', pathMatch: 'full' }
     ]
   },
