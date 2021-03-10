@@ -1,11 +1,11 @@
-export class SubProductModel {
+export class SosyModel {
 	public category: string;
 	public subCategory: string;
 	public code: string;
 	public value: string;
 	public orderNo: number;
 
-	public convert(dto: any): SubProductModel {
+	public convert(dto: any): SosyModel {
 		this.category = dto.category;
 		this.subCategory = dto.subCategory;
 		this.code = dto.code;

@@ -1,0 +1,37 @@
+[
+    {
+        "category": "request-type",
+        "code": "CREATE_NEW_SOCD",
+        "orderNo": 1,
+        "subCategory": "LEGACY,151,MODCHAN,SOSY",
+        "value": "Create New Packet with New SOCD (New Service ID)"
+    },
+    {
+        "category": "request-type",
+        "code": "CREATE_EXIST_SOCD",
+        "orderNo": 2,
+        "subCategory": "LEGACY,151,MODCHAN,SOSY",
+        "value": "Create New Packet with Existing SOCD (New Service ID)"
+    },
+    {
+        "category": "request-type",
+        "code": "REVISE",
+        "orderNo": 3,
+        "subCategory": "LEGACY,151,MODCHAN,SOSY",
+        "value": "Revise - Benefit / Product Information / Notification (Existing Service ID)"
+    },
+    {
+        "category": "request-type",
+        "code": "REVISE_PACKAGE",
+        "orderNo": 4,
+        "subCategory": "151,MODCHAN",
+        "value": "Revise Package"
+    },
+    {
+        "category": "request-type",
+        "code": "CREATE",
+        "orderNo": 5,
+        "subCategory": "LEGACY,151,MODCHAN,SOSY",
+        "value": "Create New Packet - Create from scratch"
+    }
+]

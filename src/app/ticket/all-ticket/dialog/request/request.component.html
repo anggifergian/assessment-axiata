@@ -1,9 +1,122 @@
 <mat-dialog-content>
   <form>
     <mat-form-field>
-      <mat-select (selectionChange)="onChangeCategory($event)">
-        <mat-option></mat-option>
+      <mat-select
+        (selectionChange)="onChangeCategory($event)"
+        placeholder="Sub Product List"
+      >
+        <mat-option
+          *ngFor="let subproduct of subproductList"
+          [value]="subproduct.code"
+        >
+          {{ subproduct.value }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
+
+    <ng-container *ngIf="isShown">
+      <div *ngIf="events === 'LEGACY'">
+        <mat-form-field>
+          <mat-select
+            (selectionChange)="onChangeRevise($event)"
+            placeholder="Legacy"
+          >
+            <mat-option *ngFor="let legacy of legacyList" [value]="legacy.code">
+              {{ legacy.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div *ngIf="events === 'SOSY'">
+        <mat-form-field>
+          <mat-select
+            (selectionChange)="onChangeRevise($event)"
+            placeholder="Sosy"
+          >
+            <mat-option *ngFor="let sosy of sosyList" [value]="sosy.code">
+              {{ sosy.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div *ngIf="events === 'MODCHAN'">
+        <mat-form-field>
+          <mat-select
+            (selectionChange)="onChangeRevise($event)"
+            placeholder="Modern Channel"
+          >
+            <mat-option *ngFor="let mod of modchanList" [value]="mod.code">
+              {{ mod.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div *ngIf="events === '151'">
+        <mat-form-field>
+          <mat-select
+            (selectionChange)="onChangeRevise($event)"
+            placeholder="151"
+          >
+            <mat-option *ngFor="let five of onefiveList" [value]="five.code">
+              {{ five.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="showRequestDetail">
+      <div *ngIf="typelegacy === 'REVISE'; else elseBox">
+        <mat-form-field>
+          <mat-select
+            [(ngModel)]="selectedRequestDetail"
+            [ngModelOptions]="{ standalone: true }"
+            (selectionChange)="onRequestDetailChange($event)"
+            multiple
+            #yearSelect="ngModel"
+          >
+            <mat-option disabled="disabled">
+              <input
+                type="checkbox"
+                (click)="selectAll(checkAll.checked, yearSelect, years)"
+                #checkAll
+              />
+            </mat-option>
+            <mat-option
+              *ngFor="let requestDetail of requestDetailOptions"
+              [value]="requestDetail.code"
+              >{{ requestDetail.value }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <ng-template #elseBox>
+        <mat-form-field>
+          <mat-select
+            (selectionChange)="onRequestDetailChange($event)"
+            [(ngModel)]="selectedRequestDetail"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <mat-option
+              *ngFor="let requestDetail of requestDetailOptions"
+              [value]="requestDetail.code"
+              >{{ requestDetail.value }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </ng-template>
+    </ng-container>
   </form>
 </mat-dialog-content>
+<mat-dialog-actions>
+  <div *ngIf="eventsRevise === 'CREATE'; else elseBlock">
+    <button (click)="productList()" mat-raised-button color="primary">
+      Next
+    </button>
+  </div>
+  <ng-template #elseBlock>
+    <button (click)="openDialogVariant()" mat-raised-button color="primary">
+      Select from the list
+    </button>
+  </ng-template>
+</mat-dialog-actions>

@@ -45,6 +45,7 @@ import { RequestComponent } from './ticket/all-ticket/dialog/request/request.com
 import { MyTicketComponent } from './ticket/my-ticket/my-ticket.component';
 import { TableTicketComponent } from './ticket/my-ticket/table-ticket/table-ticket.component';
 import { ContactFormComponent } from './components/mosh/contact-form/contact-form.component';
+import { VariantComponent } from './ticket/all-ticket/dialog/variant/variant.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -83,7 +84,8 @@ const materialModule = [
     RequestComponent,
     MyTicketComponent,
     TableTicketComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    VariantComponent
   ],
   imports: [
     BrowserModule,

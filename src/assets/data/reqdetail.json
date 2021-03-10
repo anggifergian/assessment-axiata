@@ -1,0 +1,26 @@
+[
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "PRODUCT_INFO",
+        "orderNo": 3,
+        "subCategory": "REVISE",
+        "value": "Product Information"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "BENEFIT",
+        "orderNo": 4,
+        "subCategory": "REVISE",
+        "value": "Benefit"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "NOTIFICATION",
+        "orderNo": 5,
+        "subCategory": "REVISE",
+        "value": "Notification"
+    }
+]

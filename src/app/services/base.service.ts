@@ -9,7 +9,13 @@ export class BaseService {
 
     public getData(url: string, responseModel: any, requestParamModel?: any, isArray?: boolean):Observable<any> {
         const params = requestParamModel ? generateHttpParams(requestParamModel.convert()) : null;
-        console.log(params);
-        return this.http.get(url, {params});
+
+        if (url === "legacy") return this.http.get("/assets/data/legacy.json");
+        if (url === "sosy") return this.http.get("/assets/data/sosy.json");
+        if (url === "modchan") return this.http.get("/assets/data/modchan.json");
+        if (url === "onefive") return this.http.get("/assets/data/onefive.json");
+        if (url === "request") return this.http.get("/assets/data/reqdetail.json");
+
+        return this.http.get("/assets/data/sub-product-list.json");
     }
 }
