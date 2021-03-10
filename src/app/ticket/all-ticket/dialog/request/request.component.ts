@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
@@ -12,7 +12,7 @@ import { VariantComponent } from '../variant/variant.component';
   templateUrl: './request.component.html',
   styleUrls: ['./request.component.scss']
 })
-export class RequestComponent implements OnInit {
+export class RequestComponent implements OnInit, OnDestroy {
 
   subproductList: RequestModel[];
   legacyList: RequestModel[];
@@ -72,10 +72,16 @@ export class RequestComponent implements OnInit {
     })
   }
 
-  private getRequestDetailOptions() {
-		this.baseService.getData('request', null, null).subscribe(resp => {
-			if (resp) this.requestDetailOptions = resp;
-		});
+  private getRequestDetailOptions(type) {
+    if (type === 'REVISE') {
+      this.baseService.getData('request', null, null).subscribe(resp => {
+        if (resp) this.requestDetailOptions = resp;
+      });
+    } else {
+      this.baseService.getData('request2', null, null).subscribe(resp => {
+        if (resp) this.requestDetailOptions = resp;
+      });
+    }
 	}
 
   onChangeCategory(event) {
@@ -87,7 +93,9 @@ export class RequestComponent implements OnInit {
 
   onChangeRevise(event) {
     this.eventsRevise = event.value;
-    this.getRequestDetailOptions();
+    localStorage.setItem('typeLegacy', this.eventsRevise);
+    this.typelegacy = localStorage.getItem('typeLegacy');
+    this.getRequestDetailOptions(this.typelegacy);
   }
 
   productList() {
@@ -108,5 +116,11 @@ export class RequestComponent implements OnInit {
 
   get showRequestDetail():boolean {
      return this.events && this.eventsRevise ? true : false;
+  }
+
+  ngOnDestroy(): void {
+    localStorage.removeItem('typeLegacy');
+		localStorage.removeItem('typeBenefit');
+		localStorage.removeItem('requestDetail');
   }
 }

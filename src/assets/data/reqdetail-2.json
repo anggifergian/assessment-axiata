@@ -1,0 +1,66 @@
+[
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "REGULAR",
+        "orderNo": 1,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD",
+        "value": "Regular"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "BOOSTER",
+        "orderNo": 2,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD",
+        "value": "Booster"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "COMPLIMENT",
+        "orderNo": 6,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD",
+        "value": "Compliment"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "BUNDLING",
+        "orderNo": 7,
+        "subCategory": "CREATE_NEW_SOCD",
+        "value": "Bundling"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "SPJIT",
+        "orderNo": 8,
+        "subCategory": "CREATE_NEW_SOCD",
+        "value": "SPJIT"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "BOGOF",
+        "orderNo": 9,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD",
+        "value": "BOGOF"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "FIRST_EVENT",
+        "orderNo": 10,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD,CREATE",
+        "value": "FIRST_EVENT"
+    },
+    {
+        "addInfo1": null,
+        "category": "request-detail-LEGACY",
+        "code": "SIMPLY_RED",
+        "orderNo": 11,
+        "subCategory": "CREATE,CREATE_NEW_SOCD,CREATE_EXIST_SOCD,CREATE",
+        "value": "Simply Red"
+    }
+]

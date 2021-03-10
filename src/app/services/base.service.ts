@@ -15,6 +15,7 @@ export class BaseService {
         if (url === "modchan") return this.http.get("/assets/data/modchan.json");
         if (url === "onefive") return this.http.get("/assets/data/onefive.json");
         if (url === "request") return this.http.get("/assets/data/reqdetail.json");
+        if (url === "request2") return this.http.get("/assets/data/reqdetail-2.json");
 
         return this.http.get("/assets/data/sub-product-list.json");
     }
