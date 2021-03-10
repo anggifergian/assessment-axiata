@@ -1,0 +1,50 @@
+[
+    {
+        "addInfo1": "like",
+        "category": "ticket-filter",
+        "code": "ProductName",
+        "orderNo": 1,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "Ticket Name"
+    },
+    {
+        "addInfo1": "like",
+        "category": "ticket-filter",
+        "code": "_boName",
+        "orderNo": 2,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "Reporter"
+    },
+    {
+        "addInfo1": "datebetween",
+        "category": "ticket-filter",
+        "code": "_createdDate",
+        "orderNo": 3,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "Create Date",
+    },
+    {
+        "addInfo1": "int",
+        "category": "ticket-filter",
+        "code": "_status",
+        "orderNo": 4,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "status"
+    },
+    {
+        "addInfo1": "like",
+        "category": "ticket-filter",
+        "code": "ServiceID",
+        "orderNo": 5,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "Service ID"
+    },
+    {
+        "addInfo1": "like",
+        "category": "ticket-filter",
+        "code": "ticketNo",
+        "orderNo": 6,
+        "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
+        "value": "Ticket ID"
+    }
+]

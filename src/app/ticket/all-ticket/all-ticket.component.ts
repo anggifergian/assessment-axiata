@@ -23,7 +23,7 @@ export class AllTicketComponent implements OnInit {
   }
 
   private getTicketFilter() {
-    const subs = this.baseService.getData('http://www.google.com', TicketFilterModel, null, true).subscribe(resp => {
+    const subs = this.baseService.getData('ticket', TicketFilterModel).subscribe(resp => {
       if (resp) this.filterOption = resp;
     });
   }
