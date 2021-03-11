@@ -50,6 +50,8 @@ import { ContactFormComponent } from './components/mosh/contact-form/contact-for
 import { VariantComponent } from './ticket/all-ticket/dialog/variant/variant.component';
 import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
 import { ProductInformationComponent } from './ticket/add-ticket/product-information/product-information.component';
+import { CourseHttpComponent } from './components/mosh/course-http/course-http.component';
+import { PostService } from './components/mosh/services/post.service';
 
 const materialModule = [
   MatSidenavModule,
@@ -93,7 +95,8 @@ const materialModule = [
     ContactFormComponent,
     VariantComponent,
     AddTicketComponent,
-    ProductInformationComponent
+    ProductInformationComponent,
+    CourseHttpComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +112,8 @@ const materialModule = [
   ],
   providers: [
     TicketService,
-    BaseService
+    BaseService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
