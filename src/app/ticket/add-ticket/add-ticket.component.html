@@ -1,1 +1,41 @@
-<p>add-ticket works!</p>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step
+    [stepControl]="productFormGroup"
+    (selectionChange)="nexStepProduct($event, stepper)"
+  >
+    <form>
+      <ng-template matStepLabel>Product Information</ng-template>
+      <app-product-information></app-product-information>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="packetFormGroup">
+    <form [formGroup]="packetFormGroup">
+      <ng-template matStepLabel>Packet Parent</ng-template>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="benefitFormGroup">
+    <form [formGroup]="benefitFormGroup">
+      <ng-template matStepLabel>Benefit</ng-template>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="notifFormGroup">
+    <form [formGroup]="notifFormGroup">
+      <ng-template matStepLabel>Notification</ng-template>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="notesFormGroup">
+    <form [formGroup]="notesFormGroup">
+      <ng-template matStepLabel>Comments and Supporting Document</ng-template>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<ng-template #isSpinner>
+  <div class="text-center my-auto">
+    <img src="../../../../../assets/images/spinner.svg" />
+  </div>
+</ng-template>

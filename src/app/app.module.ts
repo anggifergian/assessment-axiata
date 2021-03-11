@@ -23,6 +23,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
@@ -47,6 +49,7 @@ import { TableTicketComponent } from './ticket/my-ticket/table-ticket/table-tick
 import { ContactFormComponent } from './components/mosh/contact-form/contact-form.component';
 import { VariantComponent } from './ticket/all-ticket/dialog/variant/variant.component';
 import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
+import { ProductInformationComponent } from './ticket/add-ticket/product-information/product-information.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -61,7 +64,9 @@ const materialModule = [
   MatTooltipModule,
   MatFormFieldModule,
   MatInputModule,
-  MatDialogModule
+  MatDialogModule,
+  MatStepperModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({
@@ -87,7 +92,8 @@ const materialModule = [
     TableTicketComponent,
     ContactFormComponent,
     VariantComponent,
-    AddTicketComponent
+    AddTicketComponent,
+    ProductInformationComponent
   ],
   imports: [
     BrowserModule,
