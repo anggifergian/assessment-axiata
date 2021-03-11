@@ -14,6 +14,7 @@ export class AddTicketComponent implements OnInit {
   benefitFormGroup: FormGroup;
   notifFormGroup: FormGroup;
   notesFormGroup: FormGroup;
+  isLinear = false;
 
   constructor() { }
 

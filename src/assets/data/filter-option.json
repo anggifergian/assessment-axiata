@@ -21,7 +21,7 @@
         "code": "_createdDate",
         "orderNo": 3,
         "subCategory": "AXIS,PREPAID,POSTPAID,VAS",
-        "value": "Create Date",
+        "value": "Create Date"
     },
     {
         "addInfo1": "int",

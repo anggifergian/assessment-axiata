@@ -9,6 +9,7 @@ export class BaseService {
 
     public getData(url: string, responseModel: any, requestParamModel?: any, isArray?: boolean):Observable<any> {
         const params = requestParamModel ? generateHttpParams(requestParamModel.convert()) : null;
+        console.log("Url:", url);
 
         if (url === "ticket") return this.http.get("/assets/data/filter-option.json");
         if (url === "legacy") return this.http.get("/assets/data/legacy.json");
