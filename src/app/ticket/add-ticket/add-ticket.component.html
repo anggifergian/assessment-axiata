@@ -1,29 +1,32 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper linear #stepper>
   <mat-step
     [stepControl]="productFormGroup"
     (selectionChange)="nexStepProduct($event, stepper)"
   >
     <form>
       <ng-template matStepLabel>Product Information</ng-template>
-      <app-product-information></app-product-information>
+      <product-information></product-information>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="packetFormGroup">
     <form [formGroup]="packetFormGroup">
       <ng-template matStepLabel>Packet Parent</ng-template>
+      <packet-parent></packet-parent>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="benefitFormGroup">
     <form [formGroup]="benefitFormGroup">
       <ng-template matStepLabel>Benefit</ng-template>
+      <table-benefit></table-benefit>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="notifFormGroup">
     <form [formGroup]="notifFormGroup">
       <ng-template matStepLabel>Notification</ng-template>
+      <table-notification></table-notification>
     </form>
   </mat-step>
 

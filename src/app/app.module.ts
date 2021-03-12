@@ -28,7 +28,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { AxiataComponent } from './axiata/axiata.component';
-import { AllticketComponent } from './allticket/allticket.component';
 import { UsmTableComponent } from './components/usm-table.component';
 import { UsmComponent } from './usm/usm.component';
 import { UsmFilterComponent } from './usm/usm-filter.component';
@@ -52,6 +51,9 @@ import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
 import { ProductInformationComponent } from './ticket/add-ticket/product-information/product-information.component';
 import { CourseHttpComponent } from './components/mosh/course-http/course-http.component';
 import { PostService } from './components/mosh/services/post.service';
+import { PacketParentComponent } from './ticket/add-ticket/packet-parent/packet-parent.component';
+import { TableBenefitComponent } from './ticket/add-ticket/table-benefit/table-benefit.component';
+import { TableNotificationComponent } from './ticket/add-ticket/table-notification/table-notification.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -76,7 +78,6 @@ const materialModule = [
     AppComponent,
     OnboardingComponent,
     AxiataComponent,
-    AllticketComponent,
     UsmTableComponent,
     UsmComponent,
     UsmFilterComponent,
@@ -96,7 +97,10 @@ const materialModule = [
     VariantComponent,
     AddTicketComponent,
     ProductInformationComponent,
-    CourseHttpComponent
+    CourseHttpComponent,
+    PacketParentComponent,
+    TableBenefitComponent,
+    TableNotificationComponent
   ],
   imports: [
     BrowserModule,
