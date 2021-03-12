@@ -1,3 +1,10 @@
+<div>
+  <mat-dialog-actions style="justify-content: flex-end">
+    <button (click)="remove()" mat-dialog-close mat-mini-fab>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</div>
 <mat-dialog-content>
   <form>
     <mat-form-field>
@@ -74,6 +81,7 @@
             (selectionChange)="onRequestDetailChange($event)"
             multiple
             #yearSelect="ngModel"
+            placeholder="Request Detail"
           >
             <mat-option disabled="disabled">
               <input
@@ -96,6 +104,7 @@
             (selectionChange)="onRequestDetailChange($event)"
             [(ngModel)]="selectedRequestDetail"
             [ngModelOptions]="{ standalone: true }"
+            placeholder="Request Detail"
           >
             <mat-option
               *ngFor="let requestDetail of requestDetailOptions"

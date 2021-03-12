@@ -12,7 +12,7 @@ import { VariantComponent } from '../variant/variant.component';
   templateUrl: './request.component.html',
   styleUrls: ['./request.component.scss']
 })
-export class RequestComponent implements OnInit, OnDestroy {
+export class RequestComponent implements OnInit {
 
   subproductList: RequestModel[];
   legacyList: RequestModel[];
@@ -112,13 +112,16 @@ export class RequestComponent implements OnInit, OnDestroy {
 
   selectAll(checkAll, select: NgModel, values) {}
 
-  public onRequestDetailChange(event: MatSelectChange) {}
+  public onRequestDetailChange(event: MatSelectChange) {
+    this.selectedRequestDetail = event.value;
+    localStorage.setItem("requestDetail", this.selectedRequestDetail);
+  }
 
   get showRequestDetail():boolean {
      return this.events && this.eventsRevise ? true : false;
   }
 
-  ngOnDestroy(): void {
+  remove() {
     localStorage.removeItem('typeLegacy');
 		localStorage.removeItem('typeBenefit');
 		localStorage.removeItem('requestDetail');
