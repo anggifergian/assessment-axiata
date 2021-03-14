@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { TicketService } from './services/ticket.service';
@@ -54,6 +54,7 @@ import { PostService } from './components/mosh/services/post.service';
 import { PacketParentComponent } from './ticket/add-ticket/packet-parent/packet-parent.component';
 import { TableBenefitComponent } from './ticket/add-ticket/table-benefit/table-benefit.component';
 import { TableNotificationComponent } from './ticket/add-ticket/table-notification/table-notification.component';
+import { AppErrorHandler } from './components/mosh/services/app-error-handler';
 
 const materialModule = [
   MatSidenavModule,
@@ -115,9 +116,10 @@ const materialModule = [
     ...materialModule,
   ],
   providers: [
+    { provide: ErrorHandler, useClass: AppErrorHandler },
     TicketService,
     BaseService,
-    PostService
+    PostService,
   ],
   bootstrap: [AppComponent]
 })
