@@ -55,6 +55,7 @@ import { PacketParentComponent } from './ticket/add-ticket/packet-parent/packet-
 import { TableBenefitComponent } from './ticket/add-ticket/table-benefit/table-benefit.component';
 import { TableNotificationComponent } from './ticket/add-ticket/table-notification/table-notification.component';
 import { AppErrorHandler } from './components/mosh/services/app-error-handler';
+import { GithubFollowersComponent } from './components/mosh/github-followers/github-followers.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -101,7 +102,8 @@ const materialModule = [
     CourseHttpComponent,
     PacketParentComponent,
     TableBenefitComponent,
-    TableNotificationComponent
+    TableNotificationComponent,
+    GithubFollowersComponent
   ],
   imports: [
     BrowserModule,
