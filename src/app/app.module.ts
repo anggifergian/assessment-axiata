@@ -56,6 +56,10 @@ import { TableBenefitComponent } from './ticket/add-ticket/table-benefit/table-b
 import { TableNotificationComponent } from './ticket/add-ticket/table-notification/table-notification.component';
 import { AppErrorHandler } from './components/mosh/services/app-error-handler';
 import { GithubFollowersComponent } from './components/mosh/github-followers/github-followers.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { FollowersComponent } from './pages/followers/followers.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -103,7 +107,11 @@ const materialModule = [
     PacketParentComponent,
     TableBenefitComponent,
     TableNotificationComponent,
-    GithubFollowersComponent
+    GithubFollowersComponent,
+    HomeComponent,
+    ProfileComponent,
+    FollowersComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

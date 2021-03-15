@@ -11,12 +11,32 @@ const axiataRoutes: Routes = [
     path: '',
     component: AxiataComponent,
     children: [
-      { path: '', redirectTo: 'allticket', pathMatch: 'full'},
-      { path: 'mosh', component: MoshComponent },
-      { path: 'allticket', component: AllTicketComponent},
-      { path: 'my-test', component: MyTicketComponent},
-      { path: 'add-ticket', component: AddTicketComponent},
-      { path: '**', redirectTo: 'allticket', pathMatch: 'full' }
+      {
+        path: '',
+        redirectTo: 'allticket',
+        pathMatch: 'full'
+      },
+      {
+        path: 'mosh',
+        component: MoshComponent
+      },
+      {
+        path: 'allticket',
+        component: AllTicketComponent
+      },
+      {
+        path: 'my-test',
+        component: MyTicketComponent
+      },
+      {
+        path: 'add-ticket',
+        component: AddTicketComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'allticket',
+        pathMatch: 'full'
+      }
     ]
   },
 ];

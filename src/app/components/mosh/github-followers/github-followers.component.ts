@@ -18,7 +18,6 @@ export class GithubFollowersComponent implements OnInit {
       .subscribe(
         followers => {
           this.followers = followers;
-          console.log(followers);
         });
   }
 

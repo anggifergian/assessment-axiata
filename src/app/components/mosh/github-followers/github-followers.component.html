@@ -1,12 +1,19 @@
 <ul>
-  <li class="media my-4" *ngFor="let follower of followers">
+  <li class="media my-4 align-items-center" *ngFor="let follower of followers">
     <a [href]="follower.html_url">
-      <img src="{{ follower.followers_url }}" alt="{{ follower.login }}" />
+      <img
+        class="avatar media-object"
+        src="{{ follower.avatar_url }}"
+        alt="{{ follower.login }}" />
     </a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">
-        {{ follower.login }}
-      </h5>
+      <div class="media-heading">
+        <h4 class="mt-0 mb-1">
+          <a [routerLink]="['/followers', follower.login]">
+            {{ follower.login }}
+          </a>
+        </h4>
+      </div>
     </div>
   </li>
 </ul>

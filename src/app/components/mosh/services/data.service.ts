@@ -10,12 +10,14 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class DataService {
-  constructor (
+  constructor(
     @Inject('url') private url: string,
     private http: HttpClient
-  ) {}
+  ) { }
 
-  getAll() {
+  getAll(@Inject('id') id?: string) {
+    if (id) this.url += `/${id}`;
+
     return this.http
       .get(this.url)
       .pipe(catchError(this.handleError));
