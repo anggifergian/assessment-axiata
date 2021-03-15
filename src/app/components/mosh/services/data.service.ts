@@ -16,11 +16,20 @@ export class DataService {
   ) { }
 
   getAll(@Inject('id') id?: string) {
-    if (id) this.url += `/${id}`;
+    if (!id) {
+      return this.http
+        .get(this.url)
+        .pipe(catchError(this.handleError));
+    }
 
-    return this.http
-      .get(this.url)
-      .pipe(catchError(this.handleError));
+    if (id) {
+      let url;
+      url = `${this.url}/${id}`
+      return this.http
+        .get(url)
+        .pipe(catchError(this.handleError));
+    };
+
   }
 
   create(resource) {

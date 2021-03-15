@@ -60,6 +60,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FollowersComponent } from './pages/followers/followers.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -111,7 +112,8 @@ const materialModule = [
     HomeComponent,
     ProfileComponent,
     FollowersComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

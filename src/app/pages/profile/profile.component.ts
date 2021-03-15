@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, } from '@angular/router';
+import { ActivatedRoute, Router, } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
 import { GithubProfileService } from 'src/app/services/github-profile.service';
 
@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   id: number;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private service: GithubProfileService
   ) { }
@@ -25,6 +26,12 @@ export class ProfileComponent implements OnInit {
       .subscribe(profile => {
         console.log("Data", profile);
       });
+  }
+
+  update() {
+    this.router.navigate(['/followers'], {
+      queryParams: { page: 1, order: 'newest' }
+    });
   }
 
 }
