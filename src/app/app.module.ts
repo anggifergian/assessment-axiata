@@ -61,6 +61,12 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FollowersComponent } from './pages/followers/followers.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { fakeBackendProvider } from './helpers/fake-backend-interceptor';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { OrderService } from './services/order.service';
 
 const materialModule = [
   MatSidenavModule,
@@ -113,7 +119,9 @@ const materialModule = [
     ProfileComponent,
     FollowersComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -129,9 +137,13 @@ const materialModule = [
   ],
   providers: [
     { provide: ErrorHandler, useClass: AppErrorHandler },
+    fakeBackendProvider,
+    AuthService,
+    OrderService,
     TicketService,
     BaseService,
     PostService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
