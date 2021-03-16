@@ -1,1 +1,11 @@
-<p>home works!</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngIf="authService.isLoggedIn()">
+      <a routerLink="/admin">Admin</a>
+  </li>
+  <li class="list-group-item" *ngIf="!authService.isLoggedIn()">
+      <a routerLink="/login">Login</a>
+  </li>
+  <li class="list-group-item" *ngIf="authService.isLoggedIn()">
+      <a href="#" (click)="authService.logout()">Logout</a>
+    </li>
+</ul>
