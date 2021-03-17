@@ -1,4 +1,4 @@
-import { MatTableDataSource } from "@angular/material/table";
+import { MatTableDataSource } from '@angular/material/table';
 
 export class TableModel {
     public columns: string[];

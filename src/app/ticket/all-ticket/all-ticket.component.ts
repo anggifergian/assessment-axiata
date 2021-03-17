@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TicketFilterModel } from 'src/app/core/ticket-filter.model';
 import { BaseService } from 'src/app/services/base.service';
-import { RequestComponent } from "./dialog/request/request.component";
+import { RequestComponent } from './dialog/request/request.component';
 
 @Component({
   selector: 'app-all-ticket',

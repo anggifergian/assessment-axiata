@@ -36,7 +36,7 @@ export class GithubFollowersComponent implements OnInit {
       relativeTo: this.route,
       queryParams: { page: 1, order: 'newest' },
       queryParamsHandling: 'merge',
-    })
+    });
   }
 
 }

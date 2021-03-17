@@ -10,12 +10,13 @@ export class InputFormatDirective {
 
   @HostListener('blur') onBlur() {
     let value: string = this.el.nativeElement.value;
-    let words = value.split(" ");
+    const words = value.split(' ');
 
-    for (let i = 0; i < words.length; i++)
+    for (let i = 0; i < words.length; i++) {
       words[i] = this.toTitleCase(words[i]);
+    }
 
-    value = words.join(" ");
+    value = words.join(' ');
     console.log(value);
 
     this.el.nativeElement.value = value;

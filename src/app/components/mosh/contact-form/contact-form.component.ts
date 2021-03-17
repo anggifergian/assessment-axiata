@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class ContactFormComponent {
   contactMethods = [
-    { id: 1, label: "Email" },
-    { id: 2, label: "Phone" }
+    { id: 1, label: 'Email' },
+    { id: 2, label: 'Phone' }
   ];
 
   genders = [
-    { id: 1, label: "Female" },
-    { id: 2, label: "Male" }
-  ]
+    { id: 1, label: 'Female' },
+    { id: 2, label: 'Male' }
+  ];
   onChange(input) {
     console.log(input);
   }

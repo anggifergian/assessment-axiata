@@ -7,12 +7,12 @@ export class TicketFilterModel {
     public value: string;
 
     public convert(dto: any): TicketFilterModel {
-        if (dto.addInfo1 !== null) this.addInfo1 = dto.addInfo1;
-        if (dto.category !== null) this.category = dto.category;
-        if (dto.code !== null) this.code = dto.code;
-        if (dto.orderNo !== null) this.orderNo = dto.orderNo;
-        if (dto.subCategory !== null) this.subCategory = dto.subCategory;
-        if (dto.value !== null) this.value = dto.value;
+        if (dto.addInfo1 !== null) { this.addInfo1 = dto.addInfo1; }
+        if (dto.category !== null) { this.category = dto.category; }
+        if (dto.code !== null) { this.code = dto.code; }
+        if (dto.orderNo !== null) { this.orderNo = dto.orderNo; }
+        if (dto.subCategory !== null) { this.subCategory = dto.subCategory; }
+        if (dto.value !== null) { this.value = dto.value; }
 
         return this;
     }

@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { onMainContentChange, onSideNavChange, animateText } from "../animations/animations";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { onMainContentChange, onSideNavChange, animateText } from '../animations/animations';
 
 @Component({
     selector: 'app-axiata',
@@ -9,8 +9,8 @@ import { onMainContentChange, onSideNavChange, animateText } from "../animations
     animations: [onSideNavChange, onMainContentChange, animateText]
 })
 export class AxiataComponent {
-    public sideNavState: boolean = false;
-    public linkText: boolean = false;
+    public sideNavState = false;
+    public linkText = false;
 
     constructor(
         private router: Router

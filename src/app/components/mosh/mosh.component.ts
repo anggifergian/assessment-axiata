@@ -9,13 +9,13 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 export class MoshComponent implements OnInit {
   post = {
     isSelected: false
-  }
+  };
 
   tweet = {
-    body: "Here is the body of a tweet...",
+    body: 'Here is the body of a tweet...',
     isLiked: true,
     likesCount: 3
-  }
+  };
 
   constructor() { }
 
@@ -23,6 +23,6 @@ export class MoshComponent implements OnInit {
   }
 
   onFavoriteChange(value: FavoriteChangedEventArgs) {
-    console.log("Favorite changed:", value);
+    console.log('Favorite changed:', value);
   }
 }

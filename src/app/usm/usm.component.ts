@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { TableModel } from "../core/table.model";
-import { UsmColumn, UsmLabel } from "../shared/usm-table-config.const";
+import { Component, OnInit } from '@angular/core';
+import { TableModel } from '../core/table.model';
+import { UsmColumn, UsmLabel } from '../shared/usm-table-config.const';
 
 @Component({
-    selector: "app-usm",
-    templateUrl: "./usm.component.html"
+    selector: 'app-usm',
+    templateUrl: './usm.component.html'
 })
 export class UsmComponent implements OnInit {
     public table: TableModel;

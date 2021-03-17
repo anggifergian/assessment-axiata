@@ -27,33 +27,35 @@ export class AuthService {
   }
 
   logout() {
-    console.log("Logging out...");
+    console.log('Logging out...');
     localStorage.removeItem('token');
   }
 
   isLoggedIn() {
-    let jwtHelper = new JwtHelperService();
-    let token = localStorage.getItem('token');
+    const jwtHelper = new JwtHelperService();
+    const token = localStorage.getItem('token');
 
-    if (!token) return false;
+    if (!token) { return false; }
 
-    let isExpired = jwtHelper.isTokenExpired(token);
+    const isExpired = jwtHelper.isTokenExpired(token);
     return !isExpired;
   }
 
   get currentUser() {
-    let token = localStorage.getItem('token');
-    if (!token) return null;
+    const token = localStorage.getItem('token');
+    if (!token) { return null; }
 
     return new JwtHelperService().decodeToken(token);
   }
 
   private handleError(error: Response) {
-    if (error.status === 400)
+    if (error.status === 400) {
       return throwError(new BadInput(error));
+    }
 
-    if (error.status === 404)
+    if (error.status === 404) {
       return throwError(new NotFoundError());
+    }
 
     return throwError(new AppError(error));
   }

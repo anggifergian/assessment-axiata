@@ -27,15 +27,16 @@ export class CourseHttpComponent implements OnInit {
 
     this.postService.create(post)
       .subscribe(
-        (response:any) => {
-          post["id"] = response.id;
+        (response: any) => {
+          post.id = response.id;
         },
         (error: AppError) => {
           this.posts.splice(0, 1);
 
-          if (error instanceof BadInput)
+          if (error instanceof BadInput) {
             console.log(error.originalError);
-          else throw error;
+          }
+          else { throw error; }
         });
   }
 
@@ -45,7 +46,7 @@ export class CourseHttpComponent implements OnInit {
   }
 
   deletePost(post) {
-    let index = this.posts.indexOf(post);
+    const index = this.posts.indexOf(post);
     this.posts.splice(index, 1);
 
     this.postService.delete(post.id)
@@ -53,9 +54,10 @@ export class CourseHttpComponent implements OnInit {
         null,
         (error: AppError) => {
           this.posts.splice(index, 0, post);
-          if (error instanceof NotFoundError)
-            alert("This post has been deleted.");
-          else throw error;
+          if (error instanceof NotFoundError) {
+            alert('This post has been deleted.');
+          }
+          else { throw error; }
         }
       );
   }

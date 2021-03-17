@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
         switchMap(data => this.service.getAll(data)),
       )
       .subscribe(profile => {
-        console.log("Data", profile);
+        console.log('Data', profile);
       });
   }
 

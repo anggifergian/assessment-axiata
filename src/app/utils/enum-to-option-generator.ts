@@ -1,4 +1,4 @@
-import { BaseOptionModel } from "../core/base-option.model";
+import { BaseOptionModel } from '../core/base-option.model';
 
 export const generateEnumOption = (enumObject: Object): BaseOptionModel[] => {
     if (enumObject) {
@@ -13,12 +13,12 @@ export const generateEnumOption = (enumObject: Object): BaseOptionModel[] => {
                     .replace(/(?<=\d) (?=\d)/g, '');
 
 
-                if (isNaN(Number(enumObject[each]))) inputOption.value = enumObject[each];
-                else inputOption.value = Number(enumObject[each]);
+                if (isNaN(Number(enumObject[each]))) { inputOption.value = enumObject[each]; }
+                else { inputOption.value = Number(enumObject[each]); }
 
                 result.push(inputOption);
             }
             return result;
         }, []);
     }
-}
+};

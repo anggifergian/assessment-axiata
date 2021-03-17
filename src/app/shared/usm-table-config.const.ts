@@ -1,19 +1,19 @@
 export const UsmColumn = [
-    "id",
-    "firstName",
-    "emailId",
-    "role",
-    "productStream",
-    "status",
-    "action"
-]
+    'id',
+    'firstName',
+    'emailId',
+    'role',
+    'productStream',
+    'status',
+    'action'
+];
 
 export const UsmLabel = [
-    "ID User",
-    "Name",
-    "Email",
-    "Role",
-    "Product Stream",
-    "Status",
-    "Action"
+    'ID User',
+    'Name',
+    'Email',
+    'Role',
+    'Product Stream',
+    'Status',
+    'Action'
 ];

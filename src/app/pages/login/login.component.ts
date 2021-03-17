@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) {
     const navigation = this.router.getCurrentNavigation();
-    let prev = navigation.extras.state;
-    if (prev) this.prevRoute = prev;
+    const prev = navigation.extras.state;
+    if (prev) { this.prevRoute = prev; }
   }
 
   ngOnInit(): void {
@@ -27,18 +27,20 @@ export class LoginComponent implements OnInit {
   signIn(value) {
     this.authService.login(value)
       .subscribe(result => {
-        if (result && !this.prevRoute)
+        if (result && !this.prevRoute) {
           this.router.navigate(['/']);
+        }
 
-        if (result && this.prevRoute)
+        if (result && this.prevRoute) {
           this.router.navigate([`/${this.prevRoute.prev}`]);
+        }
 
       }, () => {
         this.invalidLogin = true;
         setTimeout(() => {
           this.invalidLogin = false;
         }, 3000);
-      })
+      });
   }
 
 }
