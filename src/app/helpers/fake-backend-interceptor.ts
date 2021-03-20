@@ -28,7 +28,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         if (url.endsWith('/api/orders') && method === 'GET') {
-            console.log('Fake BE:', headers);
             if (headers.get('Authorization') === 'Bearer ' + token) {
                 return of(new HttpResponse({
                     status: 200,

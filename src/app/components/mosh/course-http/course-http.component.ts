@@ -28,7 +28,7 @@ export class CourseHttpComponent implements OnInit {
     this.postService.create(post)
       .subscribe(
         (response: any) => {
-          post.id = response.id;
+          post['id'] = response.id;
         },
         (error: AppError) => {
           this.posts.splice(0, 1);
@@ -41,7 +41,7 @@ export class CourseHttpComponent implements OnInit {
   }
 
   updatePost(post) {
-    this.postService.update(post, {isRead: true})
+    this.postService.update(post, { isRead: true })
       .subscribe(resp => console.log(resp));
   }
 

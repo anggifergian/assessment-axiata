@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, isDevMode, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgReduxModule, NgRedux, DevToolsExtension } from "@angular-redux/store";
 
 import { TicketService } from './services/ticket.service';
 
@@ -67,6 +68,10 @@ import { fakeBackendProvider } from './helpers/fake-backend-interceptor';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { OrderService } from './services/order.service';
+import { AxiataState, initialState, rootReducer } from './store';
+import { TodoListComponent } from './components/mosh/todo-list/todo-list.component';
+import { TodoDashboardComponent } from './components/mosh/todo-dashboard/todo-dashboard.component';
+import { TodoListItemComponent } from './components/mosh/todo-list/todo-list-item.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -121,7 +126,10 @@ const materialModule = [
     NavbarComponent,
     NotFoundComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    TodoListComponent,
+    TodoDashboardComponent,
+    TodoListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -134,6 +142,7 @@ const materialModule = [
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     ...materialModule,
+    NgReduxModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: AppErrorHandler },
@@ -147,4 +156,17 @@ const materialModule = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    ngRedux: NgRedux<AxiataState>,
+    devTools: DevToolsExtension
+  ) {
+    let enhancers = isDevMode() ? [devTools.enhancer()] : [];
+    ngRedux.configureStore(
+      rootReducer,
+      initialState,
+      [],
+      enhancers
+    );
+  }
+}
