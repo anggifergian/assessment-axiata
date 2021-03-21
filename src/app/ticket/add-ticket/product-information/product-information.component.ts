@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductDetailModel } from 'src/app/core/product-detail.model';
 
 @Component({
   selector: 'product-information',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductInformationComponent implements OnInit {
 
+  @Input() productDetail: ProductDetailModel;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onProductInfoSubmit() {}
 }
