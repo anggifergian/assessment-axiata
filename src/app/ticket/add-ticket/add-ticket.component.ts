@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { ProductDetailModel } from "../../core/product-detail.model"
 
 @Component({
   selector: 'app-add-ticket',
@@ -17,16 +18,14 @@ export class AddTicketComponent implements OnInit {
   typebenefit: string;
   typelegacy: string;
 
+  public productDetail: ProductDetailModel;
+
+  public isLoadingTicketInfo: boolean = false;
+  public isLoading: boolean = false;
+
   constructor() { }
 
-  ngOnInit(): void {
-    this.typebenefit = this.getItem('requestDetail');
-    this.typelegacy = this.getItem('typeLegacy');
-
-    if (this.checkLegacyType() === 'EXIST') {
-      this.getProductDetails();
-    }
-
+  private createForm() {
     this.productFormGroup = new FormGroup({
       MpeNo: new FormControl(null, Validators.required),
       TouchPoint: new FormControl(null, Validators.required),
@@ -53,12 +52,14 @@ export class AddTicketComponent implements OnInit {
     return localStorage.getItem(item);
   }
 
-  nexStepProduct(productForm: FormGroup, stepper: MatStepper) {
-    console.log(productForm, stepper);
+  ngOnInit(): void {
+    this.createForm();
+
+    this.productDetail = new ProductDetailModel();
   }
 
-  getProductDetails() {
-    console.log('Getting product details...');
+  onSubmit() {
+    this.isLoading = true;
   }
 
   checkLegacyType() {
@@ -69,7 +70,25 @@ export class AddTicketComponent implements OnInit {
       'EXIST' : 'NEW';
   }
 
-  isRevise() {
+  nextStepProduct(productForm: FormGroup, stepper: MatStepper) {
+    console.log("Product Information:", productForm);
+    console.log("Stepper:", stepper);
+    stepper.selectedIndex = 1;
+  }
 
+  nextStepPacket(stepper: MatStepper) {
+    stepper.selectedIndex = 2;
+  }
+
+  nextStepBenefit(stepper: MatStepper) {
+    stepper.selectedIndex = 3;
+  }
+
+  nextStepNotification(stepper: MatStepper) {
+    stepper.selectedIndex = 4;
+  }
+
+  nextStepNotes(stepper: MatStepper) {
+    stepper.selectedIndex = 5;
   }
 }

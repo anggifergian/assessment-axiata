@@ -1,11 +1,15 @@
 <mat-horizontal-stepper linear #stepper>
   <mat-step
     [stepControl]="productFormGroup"
-    (selectionChange)="nexStepProduct($event, stepper)"
+    (selectionChange)="nextStepProduct($event, stepper)"
   >
     <form>
       <ng-template matStepLabel>Product Information</ng-template>
-      <product-information></product-information>
+      <product-information 
+        [productDetail]="productDetail"
+        (nextStep)="nextStepProduct($event, stepper)"
+        *ngIf="!isLoadingTicketInfo; else isSpinner"
+      ></product-information>
     </form>
   </mat-step>
 
@@ -13,6 +17,9 @@
     <form [formGroup]="packetFormGroup">
       <ng-template matStepLabel>Packet Parent</ng-template>
       <packet-parent></packet-parent>
+      <button (click)="nextStepPacket(stepper)" mat-flat-button color="primary">
+        Next
+      </button>
     </form>
   </mat-step>
 
@@ -20,6 +27,9 @@
     <form [formGroup]="benefitFormGroup">
       <ng-template matStepLabel>Benefit</ng-template>
       <table-benefit></table-benefit>
+      <button (click)="nextStepBenefit(stepper)" mat-flat-button color="primary">
+        Next
+      </button>
     </form>
   </mat-step>
 
@@ -27,18 +37,76 @@
     <form [formGroup]="notifFormGroup">
       <ng-template matStepLabel>Notification</ng-template>
       <table-notification></table-notification>
+      <button (click)="nextStepNotification(stepper)" mat-flat-button color="primary">
+        Next
+      </button>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="notesFormGroup">
     <form [formGroup]="notesFormGroup">
       <ng-template matStepLabel>Comments and Supporting Document</ng-template>
+      
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Critical Points Information
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            
+          </ng-template>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Additional Information to Generate Script
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+
+          </ng-template>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Test Cases
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            
+          </ng-template>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Support Documents
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            
+          </ng-template>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <button (click)="nextStepNotes(stepper)" mat-flat-button color="primary">
+        Next
+      </button>
     </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Preview</ng-template>
+
+    <div class="custom-control custom-checkbox">
+      <input ngModel type="checkbox" />
+      <label>
+        I want to receive ACK In Progress Report
+      </label>
+    </div>
+
+    <button (click)="onSubmit()" [disabled]="isLoading">Finish</button>
   </mat-step>
 </mat-horizontal-stepper>
 
 <ng-template #isSpinner>
   <div class="text-center my-auto">
-    <img src="../../../../../assets/images/spinner.svg" />
+    <p>Loading...</p>
   </div>
 </ng-template>
