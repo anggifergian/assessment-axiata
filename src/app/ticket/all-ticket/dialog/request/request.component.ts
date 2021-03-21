@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { MatOptionSelectionChange } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
@@ -21,8 +22,8 @@ export class RequestComponent implements OnInit {
   onefiveList: RequestModel[];
   events: string;
   eventsRevise: string;
-  isShown: boolean = false;
-  selectedRequestDetail: string;
+  isShown = false;
+  selectedRequestDetail: any;
   typelegacy: string;
   years: any[];
   requestDetailOptions: Array<any> = [];
@@ -44,42 +45,42 @@ export class RequestComponent implements OnInit {
 
   private getSubProduct() {
     this.baseService.getData(null, 'AXIS').subscribe(resp => {
-      if (resp) this.subproductList = resp;
-    })
+      if (resp) { this.subproductList = resp; }
+    });
   }
 
   private getLegacy() {
     this.baseService.getData('legacy', RequestModel).subscribe(resp => {
-      if (resp) this.legacyList = resp;
-    })
+      if (resp) { this.legacyList = resp; }
+    });
   }
 
   private getSosy() {
     this.baseService.getData('sosy', RequestModel).subscribe(resp => {
-      if (resp) this.sosyList = resp;
-    })
+      if (resp) { this.sosyList = resp; }
+    });
   }
 
   private getModchan() {
     this.baseService.getData('modchan', RequestModel).subscribe(resp => {
-      if (resp) this.modchanList = resp;
-    })
+      if (resp) { this.modchanList = resp; }
+    });
   }
 
   private getOnefive() {
     this.baseService.getData('onefive', RequestModel).subscribe(resp => {
-      if (resp) this.onefiveList = resp;
-    })
+      if (resp) { this.onefiveList = resp; }
+    });
   }
 
   private getRequestDetailOptions(type) {
     if (type === 'REVISE') {
       this.baseService.getData('request', null, null).subscribe(resp => {
-        if (resp) this.requestDetailOptions = resp;
+        if (resp) { this.requestDetailOptions = resp; }
       });
     } else {
       this.baseService.getData('request2', null, null).subscribe(resp => {
-        if (resp) this.requestDetailOptions = resp;
+        if (resp) { this.requestDetailOptions = resp; }
       });
     }
 	}
@@ -100,30 +101,33 @@ export class RequestComponent implements OnInit {
 
   productList() {
     this.router.navigate(['/axiata/add-ticket']);
-		this.dialogRef.close();
+		  this.dialogRef.close();
   }
 
   openDialogVariant() {
     this.dialog.open(VariantComponent);
-		this.dialogRef.close();
+		  this.dialogRef.close();
   }
 
   onReqDetailChange(event) {}
 
-  selectAll(checkAll, select: NgModel, values) {}
-
-  public onRequestDetailChange(event: MatSelectChange) {
-    this.selectedRequestDetail = event.value;
-    localStorage.setItem("requestDetail", this.selectedRequestDetail);
+  selectAll(checkAll, select: NgModel, values) {
+    console.log(checkAll, select, values);
   }
 
-  get showRequestDetail():boolean {
+  public onRequestDetailChange(event: MatSelectChange) {
+    console.log(event);
+    this.selectedRequestDetail = event.value;
+    localStorage.setItem('requestDetail', JSON.stringify(this.selectedRequestDetail));
+  }
+
+  get showRequestDetail(): boolean {
      return this.events && this.eventsRevise ? true : false;
   }
 
   remove() {
     localStorage.removeItem('typeLegacy');
-		localStorage.removeItem('typeBenefit');
-		localStorage.removeItem('requestDetail');
+		  localStorage.removeItem('typeBenefit');
+		  localStorage.removeItem('requestDetail');
   }
 }
