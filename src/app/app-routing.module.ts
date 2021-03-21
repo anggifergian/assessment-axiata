@@ -32,7 +32,8 @@ const routes: Routes = [
   },
   {
     path: 'axiata',
-    loadChildren: () => import('./axiata/axiata.module').then(m => m.AxiataModule)
+    loadChildren: () => import('./axiata/axiata.module').then(m => m.AxiataModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

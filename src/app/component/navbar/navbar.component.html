@@ -16,4 +16,12 @@
       Followers
     </a>
   </li>
+  <li *ngIf="authService.isLoggedIn()">
+    <a
+      routerLink="/axiata"
+      routerLinkActive="active"
+      class="nav-link">
+      Axiata
+    </a>
+  </li>
 </ul>

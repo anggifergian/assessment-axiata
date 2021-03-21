@@ -26,6 +26,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { AxiataComponent } from './axiata/axiata.component';
@@ -88,7 +89,8 @@ const materialModule = [
   MatInputModule,
   MatDialogModule,
   MatStepperModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatExpansionModule
 ];
 
 @NgModule({
