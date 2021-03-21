@@ -13,7 +13,7 @@ const axiataRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'allticket',
+        redirectTo: 'all-ticket',
         pathMatch: 'full'
       },
       {
@@ -21,7 +21,7 @@ const axiataRoutes: Routes = [
         component: MoshComponent
       },
       {
-        path: 'allticket',
+        path: 'all-ticket',
         component: AllTicketComponent
       },
       {
