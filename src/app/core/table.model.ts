@@ -9,11 +9,42 @@ export class TableModel {
     public totalData: number;
 
     constructor() {
-        this.columns = [];
         this.dataSource = new MatTableDataSource([]);
-        this.labels = [];
+
+        this.columns = [
+            'ContactType',
+            'Description',
+            'Message',
+            'charCount',
+            'Action'
+        ];
+
+        this.labels = [
+            'Notification Name',
+            'Description',
+            'Message',
+            'Char Count',
+            'Action'
+        ];
+
         this.page = 1;
         this.pageSize = 10;
         this.totalData = 0;
+    }
+
+    getNumber(index: number, limit: number): number {
+        return (this.page - 1) * limit + index;
+    }
+
+    getPageIndex(): number {
+        return this.page - 1;
+    }
+
+    setPage(page: number) {
+        this.page = page;
+    }
+
+    setPageSize(size: number) {
+        this.pageSize = size;
     }
 }
