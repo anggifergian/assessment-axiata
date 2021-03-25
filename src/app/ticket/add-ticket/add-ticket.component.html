@@ -1,11 +1,15 @@
-<mat-horizontal-stepper linear #stepper>
+<mat-horizontal-stepper [linear]="false"
+  #stepper
+  (selectionChange)="onStepChange($event)"
+  >
   <mat-step
     [stepControl]="productFormGroup"
     (selectionChange)="nextStepProduct($event, stepper)"
+    [editable]="isEditable"
   >
     <form>
       <ng-template matStepLabel>Product Information</ng-template>
-      <product-information 
+      <product-information
         [productDetail]="productDetail"
         (nextStep)="nextStepProduct($event, stepper)"
         *ngIf="!isLoadingTicketInfo; else isSpinner"
@@ -13,7 +17,10 @@
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="packetFormGroup">
+  <mat-step
+    [stepControl]="packetFormGroup"
+    [editable]="isEditable"
+  >
     <form [formGroup]="packetFormGroup">
       <ng-template matStepLabel>Packet Parent</ng-template>
       <packet-parent></packet-parent>
@@ -23,7 +30,10 @@
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="benefitFormGroup">
+  <mat-step
+    [stepControl]="benefitFormGroup"
+    [editable]="isEditable"
+  >
     <form [formGroup]="benefitFormGroup">
       <ng-template matStepLabel>Benefit</ng-template>
       <table-benefit></table-benefit>
@@ -33,27 +43,33 @@
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="notifFormGroup">
+  <mat-step
+    [stepControl]="notifFormGroup"
+    [editable]="isEditable"
+  >
     <form [formGroup]="notifFormGroup">
       <ng-template matStepLabel>Notification</ng-template>
-      <table-notification></table-notification>
+      <table-notification [table]="table"></table-notification>
       <button (click)="nextStepNotification(stepper)" mat-flat-button color="primary">
         Next
       </button>
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="notesFormGroup">
+  <mat-step
+    [stepControl]="notesFormGroup"
+    [editable]="isEditable"
+  >
     <form [formGroup]="notesFormGroup">
       <ng-template matStepLabel>Comments and Supporting Document</ng-template>
-      
+
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             Critical Points Information
           </mat-expansion-panel-header>
           <ng-template matExpansionPanelContent>
-            
+
           </ng-template>
         </mat-expansion-panel>
 
@@ -71,7 +87,7 @@
             Test Cases
           </mat-expansion-panel-header>
           <ng-template matExpansionPanelContent>
-            
+
           </ng-template>
         </mat-expansion-panel>
 
@@ -80,7 +96,7 @@
             Support Documents
           </mat-expansion-panel-header>
           <ng-template matExpansionPanelContent>
-            
+
           </ng-template>
         </mat-expansion-panel>
       </mat-accordion>
@@ -96,6 +112,7 @@
 
     <div class="custom-control custom-checkbox">
       <input ngModel type="checkbox" />
+      <preview></preview>
       <label>
         I want to receive ACK In Progress Report
       </label>

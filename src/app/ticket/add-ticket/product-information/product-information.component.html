@@ -1,40 +1,45 @@
-<form>
-    <ng-container>
-        <div>
+<form [formGroup]="productFormGroup" (ngSubmit)="onProductInfoSubmit()">
+    <ng-container *ngFor="let field of productField; let i = index">
+        <div *ngIf="field.visible === true" [ngClass]="i < 4 ? 'col-md-12' : 'col-md-6'">
+
+            <div *ngIf="field.display === 'textbox'">
+                <label *ngIf="field.mandatory == true; else elseBlock">
+                    {{ field.title }} *
+                </label>
+            </div>
+
+            <ng-template #elseBlock>
+                <label>{{ field.title }}</label>
+            </ng-template>
+
             <mat-form-field>
-                <textarea matInput rows="6"></textarea>
-                <input matInput type="text" autocomplete="off">
-                <input matInput type="text" autocomplete="off">
+                <textarea matInput
+                    rows="6"
+                    [formControlName]="field.name"
+                    *ngIf="field.type === 'string'
+                    && field.name === 'BussinessObjective'
+                    || field.name === 'ProgramDescription'"></textarea>
+
+                <input matInput
+                    type="text"
+                    autocomplete="off"
+                    [formControlName]="field.name"
+                    *ngIf="field.type === 'string'
+                    && field.name !== 'BussinessObjective'
+                    && field.name !== 'ProgramDescription'">
+
+                <input matInput
+                    appInputNumber
+                    type="text"
+                    autocomplete="off"
+                    [formControlName]="field.name"
+                    *ngIf="field.type === 'int'">
             </mat-form-field>
 
             <mat-error></mat-error>
         </div>
-        <div>
-            <mat-form-field>
-                <mat-label></mat-label>
-                <mat-select>
-                    <mat-option></mat-option>
-                </mat-select>
-            </mat-form-field>
 
-            <mat-error></mat-error>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label></mat-label>
-                <mat-select>
-                    <mat-option></mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput type="text">
-            </mat-form-field>
-
-            <mat-error></mat-error>
-        </div>
     </ng-container>
-    <button (click)="onProductInfoSubmit()">
-        Next
-    </button>
+
+    <button mat-button matStepperNext>Next</button>
 </form>

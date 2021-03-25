@@ -1,1 +1,61 @@
-<p>table-notification works!</p>
+<table
+    mat-table
+    matSort
+    matSortDisableClear
+    [dataSource]="table.dataSource"
+    (matSortChange)="onSort()">
+
+    <ng-container [matColumnDef]="table.columns[0]">
+        <th *matHeaderCellDef [mat-sort-header]="table.columns[0]">
+            {{ table.labels[0] }}
+        </th>
+    </ng-container>
+
+    <ng-container [matColumnDef]="table.columns[1]">
+        <th *matHeaderCellDef [mat-sort-header]="table.columns[0]">
+            {{ table.labels[1] }}
+        </th>
+    </ng-container>
+
+    <ng-container [matColumnDef]="table.columns[2]">
+        <th *matHeaderCellDef [mat-sort-header]="table.columns[0]">
+            {{ table.labels[2] }}
+        </th>
+    </ng-container>
+
+    <ng-container [matColumnDef]="table.columns[3]">
+        <th *matHeaderCellDef [mat-sort-header]="table.columns[0]">
+            {{ table.labels[3] }}
+        </th>
+    </ng-container>
+
+    <ng-container [matColumnDef]="table.columns[4]">
+        <th *matHeaderCellDef [mat-sort-header]="table.columns[0]">
+            {{ table.labels[4] }}
+        </th>
+    </ng-container>
+
+    <ng-container matColumnDef="no-content">
+        <th *matHeaderCellDef [colSpan]="table.columns.length">
+            Data tidak tersedia
+        </th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="table.columns"></tr>
+
+    <tr mat-header-row
+        *matHeaderRowDef="['no-content']"
+        [style.display]="(table.totalData === 0) ? 'table-row' : 'none'"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: table.columns;"></tr>
+
+</table>
+
+<mat-paginator #matPaginator
+    [length]="table.totalData"
+    [pageSize]="table.pageSize"
+    [pageIndex]="table.getPageIndex()"
+    [pageSizeOptions]="[5, 10, 25]"
+    (page)="pageIndex($event)"
+>
+</mat-paginator>

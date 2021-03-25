@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { TableModel } from 'src/app/core/table.model';
 import { ProductDetailModel } from "../../core/product-detail.model"
 
 @Component({
@@ -18,8 +19,10 @@ export class AddTicketComponent implements OnInit {
   typebenefit: string;
   typelegacy: string;
 
-  public productDetail: ProductDetailModel;
+  productDetail: ProductDetailModel;
+  table: TableModel;
 
+  public isEditable: boolean = true;
   public isLoadingTicketInfo: boolean = false;
   public isLoading: boolean = false;
 
@@ -56,6 +59,8 @@ export class AddTicketComponent implements OnInit {
     this.createForm();
 
     this.productDetail = new ProductDetailModel();
+    this.table = new TableModel();
+    console.log("Table (add-ticket):", this.table);
   }
 
   onSubmit() {
@@ -72,8 +77,11 @@ export class AddTicketComponent implements OnInit {
 
   nextStepProduct(productForm: FormGroup, stepper: MatStepper) {
     console.log("Product Information:", productForm);
-    console.log("Stepper:", stepper);
     stepper.selectedIndex = 1;
+  }
+
+  onStepChange(event) {
+    console.log(event);
   }
 
   nextStepPacket(stepper: MatStepper) {

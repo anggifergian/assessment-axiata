@@ -5,7 +5,7 @@ import { generateHttpParams } from '../utils/http-param-generator';
 
 @Injectable()
 export class BaseService {
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     public getData(url: string, responseModel: any, requestParamModel?: any, isArray?: boolean): Observable<any> {
         const params = requestParamModel ? generateHttpParams(requestParamModel.convert()) : null;
@@ -18,6 +18,7 @@ export class BaseService {
         if (url === 'onefive') { return this.http.get('/assets/data/onefive.json'); }
         if (url === 'request') { return this.http.get('/assets/data/reqdetail.json'); }
         if (url === 'request2') { return this.http.get('/assets/data/reqdetail-2.json'); }
+        if (url === 'productStream') { return this.http.get('./assets/data/product-stream.json') };
 
         return this.http.get('/assets/data/sub-product-list.json');
     }

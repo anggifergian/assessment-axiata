@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { AxiataComponent } from './axiata/axiata.component';
@@ -73,6 +74,7 @@ import { AxiataState, initialState, rootReducer } from './store';
 import { TodoListComponent } from './components/mosh/todo-list/todo-list.component';
 import { TodoDashboardComponent } from './components/mosh/todo-dashboard/todo-dashboard.component';
 import { TodoListItemComponent } from './components/mosh/todo-list/todo-list-item.component';
+import { PreviewComponent } from './ticket/add-ticket/preview/preview.component';
 
 const materialModule = [
   MatSidenavModule,
@@ -90,7 +92,8 @@ const materialModule = [
   MatDialogModule,
   MatStepperModule,
   MatProgressSpinnerModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatPaginatorModule
 ];
 
 @NgModule({
@@ -131,7 +134,8 @@ const materialModule = [
     AdminComponent,
     TodoListComponent,
     TodoDashboardComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
